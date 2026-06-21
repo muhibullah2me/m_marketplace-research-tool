@@ -18,6 +18,9 @@ const fetch = require('node-fetch');
 const rateLimit = require('express-rate-limit');
 
 const app = express();
+
+app.set('trust proxy', 1);
+
 const PORT = process.env.PORT || 3001;
 const ETSY_KEYSTRING = process.env.ETSY_KEYSTRING;
 const ETSY_SHARED_SECRET = process.env.ETSY_SHARED_SECRET;
