@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Listing Lab — Etsy keyword & listing research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <span class="brand-mark">✦</span>
+      <span class="brand-name">Listing Lab</span>
+    </div>
+    <span class="brand-tag">Etsy keyword &amp; listing research</span>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero wrap">
+    <p class="eyebrow">Search live Etsy listings</p>
+    <h1>Find out what's<br><em>actually</em> selling.</h1>
+    <p class="hero-sub">Type a keyword. See real listings, pricing, favorites, and the tags
+      sellers are using right now &mdash; pulled straight from Etsy.</p>
+
+    <form id="search-form" class="search-form" autocomplete="off">
+      <input
+        type="text"
+        id="keyword-input"
+        placeholder="e.g. boho earrings, dog bandana, wedding sign"
+        aria-label="Search keyword"
+        required
+      />
+      <button type="submit" id="search-btn">
+        <span class="btn-label">Search listings</span>
+      </button>
+    </form>
+
+    <div id="status-line" class="status-line" aria-live="polite"></div>
+  </section>
+
+  <section class="wrap" id="stats-section" hidden>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Listings found</span>
+        <span class="stat-value" id="stat-count">&mdash;</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Average price</span>
+        <span class="stat-value" id="stat-price">&mdash;</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Avg. favorites</span>
+        <span class="stat-value" id="stat-fav">&mdash;</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Avg. views</span>
+        <span class="stat-value" id="stat-views">&mdash;</span>
+      </div>
+    </div>
+
+    <div class="tag-panel" id="tag-panel" hidden>
+      <p class="tag-panel-label">Tags showing up most across these listings</p>
+      <div class="tag-cloud" id="tag-cloud"></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="results-section">
+    <div id="results-list" class="results-list"></div>
+    <div id="empty-state" class="empty-state">
+      <p class="empty-glyph">◌</p>
+      <p>Search a keyword above to pull live listings from Etsy.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap site-footer">
+  <p>Listing Lab pulls live public data from the Etsy Open API. Not affiliated with or endorsed by Etsy, Inc.</p>
+</footer>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
